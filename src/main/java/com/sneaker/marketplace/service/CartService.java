@@ -35,7 +35,12 @@ public class CartService {
 
         if (existing.isPresent()) {
             CartItem item = existing.get();
-            item.setQuantity(item.getQuantity() + request.getQuantity());
+            int newQty = item.getQuantity() + request.getQuantity();
+            if (newQty <= 0) {
+                cartItemRepository.delete(item);
+                return null;
+            }
+            item.setQuantity(newQty);
             return cartItemRepository.save(item);
         }
 
