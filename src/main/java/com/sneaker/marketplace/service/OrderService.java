@@ -57,13 +57,13 @@ public class OrderService {
 
         return order;
     }
-
+    @Transactional
     public List<Order> getUserOrders(String email) {
         User user = userRepository.findByEmail(email)
                 .orElseThrow(() -> new RuntimeException("User not found"));
         return orderRepository.findByUserOrderByCreatedAtDesc(user);
     }
-
+    @Transactional
     public Order getOrderById(Long id) {
         return orderRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Order not found"));

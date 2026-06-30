@@ -1,5 +1,6 @@
 package com.sneaker.marketplace.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import java.time.LocalDateTime;
@@ -23,10 +24,11 @@ public class User {
     private String email;
 
     @Column(nullable = false)
+    @JsonIgnore
     private String password;
 
     @Column(nullable = false)
-    private String role; // USER or ADMIN
+    private String role;
 
     @Column(name = "created_at")
     private LocalDateTime createdAt;
