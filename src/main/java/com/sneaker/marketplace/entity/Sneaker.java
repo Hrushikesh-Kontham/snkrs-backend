@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "sneakers")
@@ -44,4 +45,6 @@ public class Sneaker {
     public void prePersist() {
         this.createdAt = LocalDateTime.now();
     }
+    @OneToMany(mappedBy = "sneaker", cascade = CascadeType.ALL)
+    private List<SneakerImage> images;
 }

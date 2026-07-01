@@ -8,4 +8,6 @@ public interface SneakerRepository extends JpaRepository<Sneaker, Long> {
     List<Sneaker> findByBrand(String brand);
     List<Sneaker> findByCategory(String category);
     List<Sneaker> findByNameContainingIgnoreCase(String name);
+    List<Sneaker> findByBrandIgnoreCase(String brand);
+    List<Sneaker> findByCategoryIgnoreCase(String category);
 }

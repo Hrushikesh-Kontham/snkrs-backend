@@ -2,6 +2,7 @@ package com.sneaker.marketplace.dto;
 
 import lombok.Data;
 import java.math.BigDecimal;
+import java.util.List;
 
 @Data
 public class SneakerRequest {
@@ -12,4 +13,5 @@ public class SneakerRequest {
     private String category;
     private String imageUrl;
     private Integer stock;
+    private List<String> imageUrls;
 }

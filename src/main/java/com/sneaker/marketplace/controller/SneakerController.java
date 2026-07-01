@@ -39,7 +39,7 @@ public class SneakerController {
     // Admin endpoints
     @PostMapping("/admin/sneakers")
     public ResponseEntity<Sneaker> addSneaker(@RequestBody SneakerRequest request) {
-        return ResponseEntity.ok(sneakerService.addSneaker(request));
+        return ResponseEntity.ok(sneakerService.createSneaker(request));
     }
 
     @PutMapping("/admin/sneakers/{id}")
