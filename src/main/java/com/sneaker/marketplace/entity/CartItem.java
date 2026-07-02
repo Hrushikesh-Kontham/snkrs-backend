@@ -27,4 +27,7 @@ public class CartItem {
 
     @Column(nullable = false)
     private Integer quantity;
+
+    @Column
+    private String size;
 }

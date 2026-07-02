@@ -31,7 +31,7 @@ public class CartService {
         Sneaker sneaker = sneakerRepository.findById(request.getSneakerId())
                 .orElseThrow(() -> new RuntimeException("Sneaker not found"));
 
-        Optional<CartItem> existing = cartItemRepository.findByUserAndSneaker(user, sneaker);
+        Optional<CartItem> existing = cartItemRepository.findByUserAndSneakerAndSize(user, sneaker, request.getSize());
 
         if (existing.isPresent()) {
             CartItem item = existing.get();
@@ -48,6 +48,7 @@ public class CartService {
                 .user(user)
                 .sneaker(sneaker)
                 .quantity(request.getQuantity())
+                .size(request.getSize())
                 .build();
 
         return cartItemRepository.save(cartItem);

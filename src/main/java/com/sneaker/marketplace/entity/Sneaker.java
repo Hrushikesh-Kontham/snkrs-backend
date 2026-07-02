@@ -41,6 +41,9 @@ public class Sneaker {
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 
+    @Column(name = "sizes", columnDefinition = "TEXT")
+    private String sizes; // comma-separated: "7,8,9,10,11,12"
+
     @PrePersist
     public void prePersist() {
         this.createdAt = LocalDateTime.now();

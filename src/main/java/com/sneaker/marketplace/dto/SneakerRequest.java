@@ -14,4 +14,5 @@ public class SneakerRequest {
     private String imageUrl;
     private Integer stock;
     private List<String> imageUrls;
+    private String sizes;
 }

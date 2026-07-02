@@ -6,4 +6,5 @@ import lombok.Data;
 public class CartRequest {
     private Long sneakerId;
     private Integer quantity;
+    private String size;
 }

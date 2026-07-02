@@ -42,6 +42,7 @@ public class SneakerService {
         Sneaker sneaker = Sneaker.builder()
                 .name(request.getName())
                 .brand(request.getBrand())
+                .sizes(request.getSizes())
                 .price(request.getPrice())
                 .description(request.getDescription())
                 .category(request.getCategory())
@@ -78,6 +79,7 @@ public class SneakerService {
         sneaker.setCategory(request.getCategory());
         sneaker.setImageUrl(request.getImageUrl());
         sneaker.setStock(request.getStock());
+        sneaker.setSizes(request.getSizes());
 
         if (request.getImageUrls() != null && !request.getImageUrls().isEmpty()) {
             sneakerImageRepository.deleteBySneaker(sneaker);
