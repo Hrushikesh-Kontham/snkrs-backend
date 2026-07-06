@@ -44,6 +44,9 @@ public class Sneaker {
     @Column(name = "sizes", columnDefinition = "TEXT")
     private String sizes; // comma-separated: "7,8,9,10,11,12"
 
+    @Column
+    private String gender; // MALE, FEMALE, UNISEX
+
     @PrePersist
     public void prePersist() {
         this.createdAt = LocalDateTime.now();

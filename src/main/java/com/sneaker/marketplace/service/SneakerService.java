@@ -48,6 +48,7 @@ public class SneakerService {
                 .category(request.getCategory())
                 .imageUrl(request.getImageUrl())
                 .stock(request.getStock())
+                .gender(request.getGender())
                 .build();
 
         sneakerRepository.save(sneaker);
@@ -80,6 +81,7 @@ public class SneakerService {
         sneaker.setImageUrl(request.getImageUrl());
         sneaker.setStock(request.getStock());
         sneaker.setSizes(request.getSizes());
+        sneaker.setGender(request.getGender());
 
         if (request.getImageUrls() != null && !request.getImageUrls().isEmpty()) {
             sneakerImageRepository.deleteBySneaker(sneaker);
