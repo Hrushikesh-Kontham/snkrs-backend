@@ -22,7 +22,7 @@ public class OrderItem {
     @JsonIgnore
     private Order order;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "sneaker_id", nullable = false)
     private Sneaker sneaker;
 
