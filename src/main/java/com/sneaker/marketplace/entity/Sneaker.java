@@ -51,6 +51,6 @@ public class Sneaker {
     public void prePersist() {
         this.createdAt = LocalDateTime.now();
     }
-    @OneToMany(mappedBy = "sneaker", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "sneaker", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<SneakerImage> images;
 }
